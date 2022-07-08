@@ -1,0 +1,29 @@
+<h1>
+  Air BnB
+</h1>
+<h2>
+  Making rent more expensive one city at a time
+</h2>
+<% @flats.each do |flat| %>
+  <div>
+    <h3>
+      <%= flat.name %>
+    </h3>
+    <h4>
+      <%= flat.address %>
+    </h4>
+    <p>
+      <%= flat.description %>
+    </p>
+    <ul>
+      <li>
+        <%= flat.price_per_night %>
+      </li>
+      <li>
+        <%= flat.number_of_guests %>
+      </li>
+    </ul>
+    <%= link_to 'More info', flat_path(flat) %>
+  </div>
+<% end %>
+<%= link_to 'New Flat', new_flat_path %>
